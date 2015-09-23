@@ -1,5 +1,5 @@
 // Write a program that creates a string that represents an 8 x 8 grid
-// Using line characters to seperate lines. At eacht position of the grid
+// Using line characters to seperate lines. At each position of the grid
 // there is either a space or a # character
 // The characters should form a chess board
 // Passing this string to console.log should show something like this:
@@ -19,21 +19,12 @@
 var board = "";
 var size = 8;
 
-for (var x = 0; x < size; x++) {
-  for (var y = 0; y < size; y++) {
-    if ( x % 2 == 0) {
-      if ( y % 2 == 0) {
-        board += "#";
-      } else {
-        board += " ";
-      }
+for (var height = 0; height < size; height++) {
+  for (var width = 0; width < size; width++) {
+    if ((height + width) % 2 == 0) {
+      board += "#";
     } else {
-      if (y % 2 == 0) {
-        board += " ";
-      }
-      else {
-        board += "#";
-      }
+      board += " ";
     }
   }
   board += "\n";
