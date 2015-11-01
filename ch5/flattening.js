@@ -5,6 +5,7 @@ to “flatten” an array of arrays into a single array that has
 all the elements of the input arrays.
 */
 
+// Without reduce and concat
 function flatten(array) {
   var flattened = [];
   for (var i = 0; i < array.length; i++) {
@@ -15,5 +16,18 @@ function flatten(array) {
   return flattened
 }
 
-console.log(flatten([[1, 2, 3], [4, 5, 6]]));
+var arrays = [[1, 2, 3], [4, 5], [6]];
+
+console.log(flatten(arrays));
+// [ 1, 2, 3, 4, 5, 6 ]
+
+console.log(arrays.reduce(function(flat, current) {
+  return flat.concat(current);
+}, []));
+// [ 1, 2, 3, 4, 5, 6 ]
+
+
+
+
+
 
