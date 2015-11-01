@@ -1,11 +1,8 @@
-function arrayToList(arr) {
-  var list = {}
-  var temp = list
+function arrayToList(array) {
+  var list = null
 
-  for (var i = 0; i < arr.length; i++) {
-    temp.value = arr[i]
-    temp.rest = {}
-    temp = temp.rest;
+  for (var i = 0; i < array.length; i++) {
+    list = { value: array[array.length - i - 1], rest: list };
   }
 
   return list
